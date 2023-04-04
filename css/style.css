@@ -94,6 +94,12 @@ p
 	margin: 0 auto;
 }
 
+.flex-list
+{
+	display: flex;
+	list-style: none;
+}
+
 .underline
 {
 	text-decoration: underline;
@@ -114,10 +120,6 @@ p
 
 .nav-list
 {
-	display: flex;
-
-	list-style: none;
-
 	padding: 0;
 }
 
@@ -170,11 +172,9 @@ p
 
 .card-tags
 {
-	display: flex;
 	gap: 1rem;
 
-	list-style: none;
-	padding: 1rem 0 0 0;
+	padding: 1rem 0 0 0
 }
 
 .card-tags li
