@@ -143,6 +143,18 @@ p
 	padding: 0.25rem;
 }
 
+.language-icon-list
+{
+	gap: 0.5rem;
+	padding: 0rem;
+}
+
+.language-icon-list img
+{
+	width: 50px;
+	aspect-ratio: 1;
+}
+
 .card
 {
 	color: var(--clr-accent-700);
