@@ -1,0 +1,158 @@
+/* Fonts from: https://typespiration.com/design/dorothy/ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@0;1&family=Vollkorn:ital@0;1&display=swap');
+
+:root 
+{
+	--ff-header: 'Roboto Condensed', sans-serif;
+	--fw-header: 400;
+	--ff-main: 'Vollkorn', serif;
+	--fw-main: 400;
+	--fs-500: 1rem;
+	--fs-600: 1.5rem;
+	--fs-700: 1.75rem;
+
+	--clr-background: #7389AE;
+	--clr-background-accent: #FFF;
+	--clr-main: #FFF;
+	--clr-accent-100: #FFDA53;
+	--clr-accent-500: #777;
+}
+
+/* CSS Reset */
+*, *::before, *::after 
+{
+	box-sizing: border-box;
+}
+
+* 
+{
+	margin: 0;
+}
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+/* CSS Reset */
+
+body 
+{
+	background: var(--clr-background);
+	color: var(--clr-main);
+}
+
+a 
+{
+	font-family: var(--ff-main);
+	font-weight: var(--fw-main);
+
+	color: var(--clr-accent-100);
+
+	text-decoration: none;
+
+	transition: 0.3s;
+}
+
+a:hover, a:focus
+{
+	backdrop-filter: invert(15%);
+}
+
+h1
+{
+	font-family: var(--ff-header);
+	font-weight: var(--fw-header);
+	font-size: var(--fs-700);
+
+	margin: 1rem 0;
+}
+
+h2 
+{
+	font-family: var(--ff-header);
+	font-weight: var(--fw-header);
+	font-size: var(--fs-600);
+
+	margin-top: 1rem;
+}
+
+.container
+{
+	width: 50%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.underline
+{
+	text-decoration: underline;
+}
+
+.main-nav
+{
+	display: flex;
+	justify-content: space-between;
+
+	background: var(--clr-background-accent);
+}
+
+.main-nav a
+{
+	display: inline-block;
+}
+
+.nav-list
+{
+	display: flex;
+
+	list-style: none;
+
+	padding: 0;
+}
+
+.nav-list a
+{
+	color: var(--clr-accent-500);
+
+	padding: 1rem;
+}
+
+.social-buttons
+{
+	padding-right: 1rem;
+	font-size: 0;
+}
+
+/* TODO: Make the padding fill the main-nav without expanding content*/
+.social-buttons img
+{
+	display: inline-block;
+	padding: 0.25rem;
+}
+
+.card
+{
+	color: var(--clr-background);
+	background-color: var(--clr-main);
+
+	margin: 2rem;
+	border-radius: 0.25rem;
+	padding: 1.5rem;
+
+	transition: 0.3s;
+}
+
+.card:hover
+{
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card a
+{
+	color: var(--clr-accent-500);
+}
+
+.card h2
+{
+	margin: 0;
+}
