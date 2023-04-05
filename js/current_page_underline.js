@@ -1,18 +1,22 @@
-export { is_on_index_with_empty_pathname, addUnderlineIfLinksToCurrentPage };
+export { isOnIndexPage, doesAnchorLinkToCurrentPage, addUnderlineToAnchorIfLinksToCurrentPage };
 
-function is_on_index_with_empty_pathname(pathname) {
-    if (window.location.pathname != "/") return false;
-    return pathname == "/index.html";
+function isOnIndexPage(pathname) {
+    if (pathname != "/index.html") { return false; }
+    return window.location.pathname == "/" || window.location.pathname == "/index.html";
 }
 
-function addUnderlineIfLinksToCurrentPage(element) {
+function doesAnchorLinkToCurrentPage(anchor) {
+    if (!anchor) { return; }
+
+    const anchor_pathname = anchor.pathname;
+    return isOnIndexPage(anchor_pathname) || window.location.pathname == anchor_pathname;
+}
+
+function addUnderlineToAnchorIfLinksToCurrentPage(element) {
     if (!element) { return; }
 
     const anchor = element.querySelector("a");
-    if (!anchor) { return; }
-
-    const anchor_pathname = new URL(anchor.href).pathname;
-    if (window.location.pathname == anchor_pathname || is_on_index_with_empty_pathname(anchor_pathname)) {
+    if (doesAnchorLinkToCurrentPage(anchor)) {
         anchor.classList.add("underline");
     }
 }
@@ -25,7 +29,7 @@ window.addEventListener("load", () => {
     if (!nav_list_elements) { return; }
 
     for (let current_element of nav_list_elements) {
-        addUnderlineIfLinksToCurrentPage(current_element);
+        addUnderlineToAnchorIfLinksToCurrentPage(current_element);
     }
 });
 

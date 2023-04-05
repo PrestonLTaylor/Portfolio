@@ -1,0 +1,15 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "My personal portfolio website.",
+    "author": "Preston L Taylor",
+    "license": "UNLICENSED",
+    "type": "module",
+    "devDependencies": {
+        "jest": "^29.5.0",
+        "jest-environment-jsdom": "^29.5.0"
+    },
+    "scripts": {
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    }
+}
