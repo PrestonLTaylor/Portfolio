@@ -87,6 +87,14 @@ p
 	line-height: 1.3;
 }
 
+footer {
+    background-color: var(--clr-background-accent);
+
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
 .container
 {
 	--content-width: 50%;
@@ -109,7 +117,6 @@ p
 .main-nav
 {
 	display: flex;
-	justify-content: space-between;
 
 	background: var(--clr-background-accent);
 }
@@ -131,18 +138,6 @@ p
 	padding: 1rem;
 }
 
-.social-buttons
-{
-	padding-right: 1rem;
-	font-size: 0;
-}
-
-/* TODO: Make the padding fill the main-nav without expanding content*/
-.social-buttons img
-{
-	display: inline-block;
-	padding: 0.25rem;
-}
 
 .language-icon-list
 {
@@ -204,4 +199,14 @@ p
 
 	border-radius: 0.25rem;
 	padding: 0.2rem;
+}
+
+.social-buttons
+{
+    justify-content: center;
+}
+
+.social-buttons a 
+{
+	padding: 0.75rem;
 }
