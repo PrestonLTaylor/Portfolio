@@ -1,0 +1,19 @@
+---
+export interface Props {
+    socialName: string;
+    socialLink: string;
+}
+
+const { socialName, socialLink } = Astro.props;
+---
+
+<a href={socialLink} target=”_blank”>
+    <img width="30" height="30" src={`/img/${socialName}.png`} alt={`My personal ${socialName}`}>
+</a>
+
+<style>
+    a {
+		display: inline-block;
+        padding: 1rem;
+    }
+</style>

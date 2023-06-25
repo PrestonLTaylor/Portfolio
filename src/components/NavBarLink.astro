@@ -1,0 +1,34 @@
+---
+export interface Props {
+	href: string;
+	text: string;
+}
+
+const { href, text } = Astro.props;
+
+function isOnIndexPage(): boolean {
+	return Astro.url.pathname === "/" && href === "/index.html";
+}
+
+function isCurrentNavBarLink(): boolean {
+	return isOnIndexPage() || Astro.url.pathname === href;
+}
+
+const anchorClass: string = isCurrentNavBarLink() ? "underlined" : "";
+const anchorAriaCurrent: string = isCurrentNavBarLink() ? "page" : "false";
+---
+
+<li>
+	<a class={anchorClass} aria-current={anchorAriaCurrent} href={href}>{text}</a>
+</li>
+
+<style>
+	a {
+		display: inline-block;
+		padding: 1rem;
+	}
+
+	.underlined {
+		text-decoration: underline;
+	}
+</style>

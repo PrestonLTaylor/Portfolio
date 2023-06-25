@@ -1,0 +1,11 @@
+---
+export interface Props {
+	langName: string;
+}
+
+const { langName } = Astro.props;
+---
+
+<li>
+	<img width="50" height="50" src={`/img/${langName}.png`} alt={ `The ${langName} programming language icon`}>
+</li>

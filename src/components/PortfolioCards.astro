@@ -1,0 +1,27 @@
+---
+const projects = await Astro.glob("../content/projects/*.md");
+---
+
+<section class="container">
+{
+    projects.map((project) => (
+        <article>
+            <project.Content />
+        </article>
+    ))
+}
+</section>
+
+<style>
+    section {
+        --content-width: 90%;
+    }
+
+    article {
+        border: 1px solid var(--clr-main);
+
+        padding: 1.5rem;
+        border-radius: 0.25rem;
+        margin: 2rem 0;
+    }
+</style>
